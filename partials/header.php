@@ -1,6 +1,7 @@
 <?php
-require 'config/database.php';
-
+include 'config/database.php';
+$db = new Database();
+$db->connect();
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +11,7 @@ require 'config/database.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP and MYSQL</title>
+
 
     <!--Style-->
     <link rel="stylesheet" href="./css/style.css">
@@ -35,7 +37,7 @@ require 'config/database.php';
           <li><a href="<?= ROOT_URL ?>services.php">Services</a></li>
           <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>
           <li><a href="signin.php">Sign In</a></li>
-          <!-- <li class="nav_profile">
+          <li class="nav_profile">
             <div class="avatar">
               <img src="./images/avatar1.jpg" alt="Image not found" />
             </div>
@@ -43,7 +45,7 @@ require 'config/database.php';
               <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
               <li><a href="<?= ROOT_URL ?>logout.php">Log Out</a></li>
             </ul>
-          </li> -->
+          </li>
         </ul>
 
         <button id="open_nav-btn"><i class="uil uil-bars"></i></button>

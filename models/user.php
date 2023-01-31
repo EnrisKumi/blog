@@ -11,7 +11,7 @@ class Users {
     public $email;
     public $password;
     public $avatar;
-    public $is_admin;
+    public $isAdmin;
 
 
     public function __construct($db){
@@ -21,43 +21,36 @@ class Users {
 
     //create User
     public function create(){
+        try{
 
-        $query = 'INSERT INTO ' . $this->table .
-            'SET 
-        firstname= :firstname,
-        lastname= :lastname,
-        username= :username,
-        email= :email,
-        password= :password,
-        avatar= :avatar,
-        is_admin= :1';
+        $query = "INSERT INTO " . $this->table . '(firstname, lastname,username,email,password,avatar,isAdmin)';
+        $query .= "VALUES(:fn,:ln,:un,:em,:pass,:ava,:isadmn)"; 
 
         //Statement
         $stmt = $this->conn->prepare($query);
 
         //saitize data
-
+        $this->firstname = htmlspecialchars(strip_tags($this->firstname));
+        $this->lastname = htmlspecialchars(strip_tags($this->lastname));
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->password = htmlspecialchars(strip_tags($this->password));
+        $this->avatar = htmlspecialchars(strip_tags($this->avatar));
+        $this->isAdmin = htmlspecialchars(strip_tags($this->isAdmin));
 
         //bind data
-        $stmt->bindParam(':firstname', $this->firstname);
-        $stmt->bindParam(':lastname', $this->lastname);
-        $stmt->bindParam(':username', $this->username);
-        $stmt->bindParam(':email', $this->email);
-        $stmt->bindParam(':password', $this->password);
-        $stmt->bindParam(':avatar', $this->avatar);
-        $stmt->bindParam(':is_admin', $this->is_admin);
+        $stmt->bindParam(':fn', $this->firstname);
+        $stmt->bindParam(':ln', $this->lastname);
+        $stmt->bindParam(':un', $this->username);
+        $stmt->bindParam(':em', $this->email);
+        $stmt->bindParam(':pass', $this->password);
+        $stmt->bindParam(':ava', $this->avatar);
+        $stmt->bindParam(':isadmn', $this->isAdmin);
 
         //execute query
-        if($stmt->execute()){
-            return true;
+        $Execute = $stmt->execute();
+        return ($Execute ? true : false);
+        } catch(Exception $e){
+            echo $e;
         }
-
-        printf("Error: %s. \n", $stmt->error);
-
-        return false;
     }
 }
-
-
-
-?>

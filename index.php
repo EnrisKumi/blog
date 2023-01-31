@@ -26,7 +26,7 @@ include 'partials/header.php';
           <div class="post_info">
             <a href="" class="category_button">Wild Life</a>
             <h3 class="post_title">
-              <a href="post.html"
+              <a href="<?ROOT_URL?>post.php"
                 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
                 et.</a
               >
