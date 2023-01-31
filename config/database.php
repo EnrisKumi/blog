@@ -1,29 +1,29 @@
 <?php
-require 'config/constants.php';
 
+require 'constants.php';
 
 class Database {
     private $DB_HOST = 'localhost';
     private $DB_USER = 'root';
     private $DB_PASS = '';
     private $DB_NAME = 'blog_fe';
-    private $conn;
+    private $connection;
 
     public function connect() {
 
-        $this->conn = null;
-        // $dns = "mysql:host=$this->DB_HOST;dbname=$this->DB_NAME";
+        $this->connection = null;
+        $dns = "mysql:host=$this->DB_HOST;dbname=$this->DB_NAME";
 
     try{
 
-      $this->conn = new PDO('mysql:host=' . $this->DB_HOST . ';dbname=' . $this->DB_NAME, $this->DB_USER, $this->DB_NAME);
-      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $this->connection = new PDO($dns, $this->DB_USER, $this->DB_PASS);
+      $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     }catch(PDOException $error){
         echo 'Connection Error' . $error->getMessage();
     }
 
-        return $this->conn;
+        return $this->connection;
 
     }
 }
