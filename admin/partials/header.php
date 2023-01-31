@@ -1,7 +1,8 @@
 <?php
 
-require 'config/database.php';
-
+include 'config/database.php';
+$db = new Database();
+$db->connect();
 ?>
 
 <!DOCTYPE html>

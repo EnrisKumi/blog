@@ -34,16 +34,16 @@ require 'config/database.php';
           <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
           <li><a href="<?= ROOT_URL ?>services.php">Services</a></li>
           <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>
-          <!-- <li><a href="signin.html">Sign In</a></li> -->
-          <li class="nav_profile">
+          <li><a href="signin.php">Sign In</a></li>
+          <!-- <li class="nav_profile">
             <div class="avatar">
               <img src="./images/avatar1.jpg" alt="Image not found" />
             </div>
             <ul>
               <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
-              <li><a href="<?= ROOT_URL ?>logout.html">Log Out</a></li>
+              <li><a href="<?= ROOT_URL ?>logout.php">Log Out</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
 
         <button id="open_nav-btn"><i class="uil uil-bars"></i></button>
