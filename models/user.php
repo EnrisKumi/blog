@@ -123,7 +123,7 @@ class Users
             $stmt->bindParam(':pass', $this->password);
             $stmt->bindParam(':ava', $this->avatar);
             $stmt->bindParam(':isadm', $this->isAdmin);
-            $stmt->bindParam('i', $this->id);
+            $stmt->bindParam(':i', $this->id);
 
             $Execute = $stmt->execute();
             return ($Execute ? true : false);

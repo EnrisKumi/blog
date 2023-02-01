@@ -36,6 +36,6 @@ if ($rows > 0) {
     echo json_encode($usersArray);
 } else {
     echo json_encode(
-        array('message' => 'No Posts Found')
+        array('message' => 'No Users Found')
     );
 }
