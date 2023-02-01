@@ -43,7 +43,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
-  color: var(--color-gray-200);
+  color: white;
   overflow-x: hidden;
   background: var(--color-bg);
   font-size: 0.9rem;
@@ -80,7 +80,7 @@ h1 {
 
 h2 {
   font-size: 1.7rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 h3 {
@@ -422,7 +422,7 @@ input,
 textarea,
 select {
   padding: 0.8rem 1.4rem;
-  background-color: var(--color-gray-900);
+  background-color: var(--color-primary);
   border-radius: var(--card-border-radius-2);
   resize: none;
   color: var(--color-white);
