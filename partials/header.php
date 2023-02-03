@@ -34,7 +34,6 @@ $db->connect();
         <a href="<?= ROOT_URL ?>" class="nav_logo">Web</a>
         <ul class="nav_items">
           <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
-          <li><a href="<?= ROOT_URL ?>services.php">Services</a></li>
           <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>
           <li><a href="signin.php">Sign In</a></li>
           <li class="nav_profile">
@@ -43,7 +42,7 @@ $db->connect();
             </div>
             <ul>
               <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
-              <li><a href="<?= ROOT_URL ?>logout.php">Log Out</a></li>
+              <li><a href="<?= ROOT_URL ?>">Log Out</a></li>
             </ul>
           </li>
         </ul>
