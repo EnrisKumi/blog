@@ -10,7 +10,7 @@ include 'partials/header.php'
         <div class="alert_message error">
           <p>This is an error message</p>
         </div>
-        <form action="" enctype="multipart/form-data">
+        <form action="includes/signup.inc.php" method="POST" enctype="multipart/form-data">
             <input type="text" placeholder="First Name" />
             <input type="text" placeholder="Last Name" />
             <input type="text" placeholder="Username" />
@@ -21,7 +21,7 @@ include 'partials/header.php'
               <label for="avatar">Profile Photo</label>
               <input type="file" id="avatar" />
             </div>
-            <button class="btn" type="submit">Sign Up</button>
+            <button class="btn" type="submit" name="submit">Sign Up</button>
           </form>
       </div>
     </section>

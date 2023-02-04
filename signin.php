@@ -27,10 +27,10 @@
         <div class="alert_message success">
           <p>This is an success message</p>
         </div>
-        <form action="">
+        <form action="includes/signin.inc.php" method="POST">
           <input type="text" placeholder="Username or Email" />
           <input type="password" placeholder="Password" /> 
-          <button class="btn" type="submit">Sign In</button>
+          <button class="btn" type="submit" name="submit" >Sign In</button>
           <small
             >Don't have an account? <a href="signup.php">Sign Up</a></small
           >

@@ -1,9 +1,11 @@
+const url = "http://localhost:81/webproject/api/"
+
 window.onload = function () {
-  getData();
+ getData();
 };
 
-async function getData() {
-  await fetch("http://localhost:81/webproject/api/posts/getPosts.php", {
+function getData() {
+   fetch(`${url}posts/getPosts.php`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +15,6 @@ async function getData() {
     .then((data) => {
       console.log(data);
       const postsContainer = document.querySelector("#posts_container");
-      console.log(postsContainer);
       data.forEach((element) => {
         const article = document.createElement("article");
         article.className = "post";
@@ -73,7 +74,12 @@ async function getData() {
         authorInfo.className = "post_author-info";
 
         const authorName = document.createElement("h5");
-        authorName.innerHTML = `By: ${element.userId}`;
+        const user = fetch(`${url}users/getUserById.php?id=${element.userId}`)
+        .then((response) => response.json())
+        .then((data)=>{
+          authorName.innerHTML = `By: ${data.username}`;
+        })
+
         authorInfo.appendChild(authorName);
 
         const datePost = document.createElement("small");
@@ -87,9 +93,9 @@ async function getData() {
         article.appendChild(postInfo);
 
         postsContainer.appendChild(article)
-        console.log(postsContainer)
 
       });
     });
 }
+
 
