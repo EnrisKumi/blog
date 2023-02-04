@@ -21,8 +21,8 @@ class Posts {
 
         try{
 
-            $query = "INSERT INTO " . $this->table . '(title, body, thumbnail, userId)';
-            $query .= "VALUES(:tl,:bd,:th, :uid)"; 
+            $query = "INSERT INTO " . $this->table . '(title, body, thumbnail, categoryId, userId)';
+            $query .= "VALUES(:tl,:bd,:th, :cid ,:uid)"; 
 
             //Statement
             $stmt = $this->conn->prepare($query);
@@ -31,13 +31,16 @@ class Posts {
             $this->title = htmlspecialchars(strip_tags($this->title));
             $this->body = htmlspecialchars(strip_tags($this->body));
             $this->thumbnail = htmlspecialchars(strip_tags($this->thumbnail));
+            $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
             $this->userId = htmlspecialchars(strip_tags($this->userId));
 
             //Bind Data
             $stmt->bindParam(':tl', $this->title);
             $stmt->bindParam(':bd', $this->body);
             $stmt->bindParam(':th', $this->thumbnail);
+            $stmt->bindParam(':cid', $this->categoryId);
             $stmt->bindParam(':uid', $this->userId);
+
 
             //Execute Query
             $Execute = $stmt->execute();

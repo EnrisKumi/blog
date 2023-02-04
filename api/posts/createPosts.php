@@ -19,6 +19,7 @@ $data = json_decode(file_get_contents("php://input"));
 $post->title = $data->title;
 $post->body = $data->body;
 $post->thumbnail = $data->thumbnail;
+$post->categoryId = $data->categoryId;
 $post->userId = $data->userId;
 
 if($post->createPost()) {
