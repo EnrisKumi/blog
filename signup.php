@@ -1,5 +1,6 @@
 <?php
 include 'partials/header.php'
+
 ?>
  
 
@@ -7,16 +8,16 @@ include 'partials/header.php'
       <div class="container form_section-container-adduser">
         <h2>Sign Up
         </h2>
-        <div class="alert_message error">
+        <!-- <div class="alert_message error">
           <p>This is an error message</p>
-        </div>
-        <form action="includes/signup.inc.php" method="POST" enctype="multipart/form-data">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="text" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Create Password" />
-            <input type="password" placeholder="Confirm Password" />
+        </div> -->
+        <form action="./includes/singup.inc.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="firstName" placeholder="First Name" />
+            <input type="text" name="lastName" placeholder="Last Name" />
+            <input type="text" name="username" placeholder="Username" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Create Password" />
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" />
             <div class="form_control">
               <label for="avatar">Profile Photo</label>
               <input type="file" id="avatar" />
