@@ -21,5 +21,5 @@ if(isset($_POST["submit"]))
 
     //goingback to frontpage
 
-    header("location: ../index.php?error=none");
+    header("location: ../index.php?error=none&id=". $_SESSION["id"]);
 }

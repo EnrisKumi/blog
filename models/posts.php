@@ -52,7 +52,7 @@ class Posts {
     }
 
     public function getPosts(){
-        $query = "SELECT * FROM " . $this->table;
+        $query = "SELECT * FROM " . $this->table. ' ORDER BY id DESC';
 
         $stmt = $this->conn->prepare($query);
 
