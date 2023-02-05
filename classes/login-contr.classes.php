@@ -18,10 +18,10 @@ class LoginContr extends Login{
             exit();
         }
 
-        //$this->getUser($this->username $this->password);
+        $this->getUser($this->username, $this->password);
     }
 
-    private function emptyInputs(){
+     private function emptyInputs(){
 
         $result = false;
 

@@ -17,9 +17,9 @@ class Login extends DatabaseUsers
             exit();
         }
 
-        if ($stmt->rowCount() == 0) {
+        if ($stmt->rowCount() === 0) {
             $stmt = null;
-            header("location: profile.php?error=profilenotfound");
+            header("location: ../index.php?error=profilenotfound");
             exit();
         }
 
@@ -52,9 +52,11 @@ class Login extends DatabaseUsers
             session_start();
             $_SESSION["id"] = $user[0]["id"];
             $_SESSION["username"] = $user[0]["username"];
+
+            $stmt = null;
         }
 
-        $stmt = null;
+        
     }
 }
 
