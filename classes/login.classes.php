@@ -8,9 +8,9 @@ class Login extends DatabaseUsers
     protected function getUser($username, $password)
     {
 
-        $stmt = $this->connect()->prepare('SELECT password FROM users WHERE username = ?;');
+        $stmt = $this->connect()->prepare('SELECT password FROM users WHERE username = ? OR email = ?;');
 
-        if (!$stmt->execute(array($username, $password))) {
+        if (!$stmt->execute(array($username, $username))) {
 
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
@@ -19,22 +19,22 @@ class Login extends DatabaseUsers
 
         if ($stmt->rowCount() === 0) {
             $stmt = null;
-            header("location: ../index.php?error=profilenotfound");
+            header("location: ../index.php?error=usernotfound");
             exit();
         }
 
         $passHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $checkPass = password_verify($password, $passHashed[0]["passwod"]);
+        $checkPass = password_verify($password, $passHashed[0]["password"]);
 
         if ($checkPass == false) {
 
             $stmt = null;
-            header("location: ../index.php?error=wronngPassword");
+            header("location: ../index.php?error=wrongPassword");
             exit();
         }elseif ($checkPass == true){
-            $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = ? AND password = ?;');
+            $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = ? OR email = ? AND password = ?;');
 
-            if (!$stmt->execute(array($username, $passHashed[0]["password"]))) {
+            if (!$stmt->execute(array($username, $username, $passHashed[0]["password"]))) {
 
                 $stmt = null;
                 header("location: ../index.php?error=stmtfailed");
