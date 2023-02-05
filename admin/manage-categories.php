@@ -61,39 +61,13 @@ include 'partials/header.php'
                 Delete
               </th>
             </thead>
-            <tbody>
-              <tr>
-                <td>Travel</td>
-                <td><a href="<?= ROOT_URL ?>admin/edit-category.php" class="btn sm">Edit</a></td>
-                <td>
-                  <a href="<?= ROOT_URL ?>admin/delete-category.php" class="btn sm danger"
-                    >Delete</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>Art</td>
-                <td><a href="<?= ROOT_URL ?>admin/edit-category.php" class="btn sm">Edit</a></td>
-                <td>
-                  <a href="<?= ROOT_URL ?>admin/delete-category.php" class="btn sm danger"
-                    >Delete</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>Music</td>
-                <td><a href="<?= ROOT_URL ?>admin/edit-category.php" class="btn sm">Edit</a></td>
-                <td>
-                  <a href="<?= ROOT_URL ?>admin/delete-category.php" class="btn sm danger"
-                    >Delete</a
-                  >
-                </td>
-              </tr>
+            <tbody id="tableBody">
             </tbody>
           </table>
         </main>
       </div>
     </section>    
     <script src="<?= ROOT_URL ?>js/main.js"></script>
+    <script src="../js/categories/getCategoriesAdmin.js"></script>
   </body>
 </html>
