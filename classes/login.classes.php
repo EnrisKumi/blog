@@ -52,6 +52,7 @@ class Login extends DatabaseUsers
             session_start();
             $_SESSION["id"] = $user[0]["id"];
             $_SESSION["username"] = $user[0]["username"];
+            $_SESSION["isAdmin"] = $user[0]["isAdmin"];
 
             $stmt = null;
         }

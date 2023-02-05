@@ -40,7 +40,20 @@ session_start();
         ?>
 
           <li><a href="#"><?php echo $_SESSION["username"]; ?></a></li>
-          <li class="nav_profile">
+          <?php 
+          if($_SESSION["isAdmin"] === 0){?>
+            <li class="nav_profile">
+            <div class="avatar">
+              <img src="./images/avatar1.jpg" alt="Image not found" />
+            </div>
+            <ul>
+              <li><a href="<?= ROOT_URL ?>userDashboard.php">Dashboard</a></li>
+              <li><a href="./includes/logout.inc.php">Log Out</a></li>
+            </ul>
+          </li>
+          <?php 
+          } else {  ?>
+            <li class="nav_profile">
             <div class="avatar">
               <img src="./images/avatar1.jpg" alt="Image not found" />
             </div>
@@ -49,6 +62,19 @@ session_start();
               <li><a href="./includes/logout.inc.php">Log Out</a></li>
             </ul>
           </li>
+          <?php 
+          } ?>
+
+          ?>
+          <!-- <li class="nav_profile">
+            <div class="avatar">
+              <img src="./images/avatar1.jpg" alt="Image not found" />
+            </div>
+            <ul>
+              <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
+              <li><a href="./includes/logout.inc.php">Log Out</a></li>
+            </ul>
+          </li> -->
 
           <?php
         } else {
