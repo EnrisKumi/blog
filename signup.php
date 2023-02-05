@@ -11,6 +11,13 @@ include 'partials/header.php'
         <!-- <div class="alert_message error">
           <p>This is an error message</p>
         </div> -->
+        <span>
+        <?php if (isset($_GET['msg'])) {
+          $error = $_GET['msg'];
+          printf('<div class="errort">%s</div><br><br?',$error);     //TODO CHANGE COLOR
+        }
+        ?>
+      </span>
         <form action="./includes/singup.inc.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="firstName" placeholder="First Name" />
             <input type="text" name="lastName" placeholder="Last Name" />

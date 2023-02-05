@@ -1,7 +1,8 @@
 <?php
 
+include "../config/database.php";
 
-class Login extends DatabaseUsers
+class Login extends Database
 {
 
 
@@ -13,13 +14,13 @@ class Login extends DatabaseUsers
         if (!$stmt->execute(array($username, $username))) {
 
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../signin.php?error=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() === 0) {
             $stmt = null;
-            header("location: ../index.php?error=usernotfound");
+            header("location: ../signin.php?error=usernotfound");
             exit();
         }
 
@@ -29,7 +30,7 @@ class Login extends DatabaseUsers
         if ($checkPass == false) {
 
             $stmt = null;
-            header("location: ../index.php?error=wrongPassword");
+            header("location: ../signin.php?error=wrongPassword");
             exit();
         }elseif ($checkPass == true){
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = ? OR email = ? AND password = ?;');
@@ -37,13 +38,13 @@ class Login extends DatabaseUsers
             if (!$stmt->execute(array($username, $username, $passHashed[0]["password"]))) {
 
                 $stmt = null;
-                header("location: ../index.php?error=stmtfailed");
+                header("location: ../signin.php?error=stmtfailed");
                 exit();
             }
 
             if ($stmt->rowCount() == 0) {
                 $stmt = null;
-                header("location: profile.php?error=profilenotfound");
+                header("location: ../index.php?error=stmtfailed");
                 exit();
             }
 

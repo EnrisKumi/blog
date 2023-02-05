@@ -11,21 +11,24 @@ if(isset($_POST["submit"]))
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
 
-    //Instantiate the contr class
-
+    //Instantiate the contr 
     include "../classes/db.classes.php";
     include "../classes/signup.classes.php";
     include "../classes/signup-contr.classes.php";
+    include "../classes/login.classes.php";
+    include "../classes/login-contr.classes.php";
+
 
     $signup = new SignupContr($firstName, $lastName, $username, $email, $password, $confirmPassword);
-
-    //error handlers /user signup
+    $login = new LoginContr($username, $password);
 
     $signup->signupUser();
+    $login->loginUser();
+
 
     echo "skjjksdajksdjhdsajkd";
 
     //goingback to frontpage
 
     header("location: ../index.php?error=none");
-}
+}       

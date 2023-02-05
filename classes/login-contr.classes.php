@@ -14,7 +14,10 @@ class LoginContr extends Login{
     public function loginUser(){
 
         if($this->emptyInputs() == false){
-            header("location: ../index.php?error=emptyinput");
+            
+            $msg = "You left one or more of the required fields blank.";
+
+            header("location: ../signin.php?msg=$msg");
             exit();
         }
 

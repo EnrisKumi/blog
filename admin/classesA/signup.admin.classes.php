@@ -5,13 +5,13 @@
 class Signup extends DatabaseUsers {
 
 
-    protected function setUser($firstName, $lastName, $username, $email, $password){
+    protected function setUser($firstNameA, $lastNameA, $usernameA, $emailA, $passwordA){
 
         $stmt = $this->connect()->prepare('INSERT INTO users (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?);');
 
-        $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPass = password_hash($passwordA, PASSWORD_DEFAULT);
 
-        if(!$stmt->execute(array($firstName, $lastName, $username, $email, $hashedPass))){
+        if(!$stmt->execute(array($firstNameA, $lastNameA, $usernameA, $emailA, $hashedPass))){
 
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
@@ -22,11 +22,11 @@ class Signup extends DatabaseUsers {
     }
 
     //check if the username or email alreday exists in the database
-    protected function checkUsers($username,  $email) {
+    protected function checkUsers($usernameA,  $emailA) {
 
         $stmt = $this->connect()->prepare('SELECT username FROM users WHERE username = ? OR email = ?;');
 
-        if(!$stmt->execute(array($username, $email))){
+        if(!$stmt->execute(array($usernameA, $emailA))){
 
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
