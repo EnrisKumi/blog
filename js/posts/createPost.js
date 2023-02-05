@@ -1,7 +1,5 @@
 const button = document.querySelector(".form");
 
-console.log(button);
-
 button.addEventListener("submit", function (event) {
   event.preventDefault();
   const selectCategories = document.querySelector("#selectCategories");
@@ -12,7 +10,7 @@ button.addEventListener("submit", function (event) {
     body: document.querySelector("#summernote").value,
     thumbnail: "first.png",
     categoryId: selectCategories.options[selectCategories.selectedIndex].value,
-    userId: 6,
+    userId: userId,
   };
   console.log(post);
 

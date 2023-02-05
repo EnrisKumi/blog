@@ -1,7 +1,12 @@
 <?php
-include 'partials/header.php'
+include './partials/header.php';
+session_start();
+$userId = $_SESSION["id"];
 ?>
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <section class="form_section">
       <div class="container form_section-container">
@@ -9,19 +14,16 @@ include 'partials/header.php'
         <div class="alert_message error">
           <p>This is an error message</p>
         </div>
-        <form action="" enctype="multipart/form-data">
-          <input type="text" placeholder="Title" />
-          <select>
-            <option value="1">Wild Life</option>
-            <option value="2">Travel</option>
-            <option value="3">Art</option>
+        <form class="form" action="" enctype="multipart/form-data">
+          <input type="text" id="title" placeholder="Title" />
+          <select id="selectCategories" >
           </select>
           <textarea rows="10" id="summernote" placeholder="body"></textarea>
           <div class="form_control">
             <label for="thumbnail">Add Photo</label>
             <input type="file" id="thumbnail" />
           </div>
-          <button class="btn" type="submit">Add Post</button>
+          <button class="btn" id="submitButton" type="submit">Add Post</button>
         </form>
       </div>
     </section>
@@ -41,5 +43,8 @@ include 'partials/header.php'
 
     </script>
     <script src="<?= ROOT_URL ?>js/main.js"></script>
+    <script src="../js/categories/getCategories.js"></script>
+    <script type="text/javascript">const userId = "<?= $userId ?>";</script>
+    <script src="../js/posts/createPost.js"></script>
   </body>
 </html>

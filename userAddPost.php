@@ -1,5 +1,7 @@
 <?php
-include './partials/header.php'
+include './partials/header.php';
+session_start();
+$userId = $_SESSION["id"];
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -42,6 +44,7 @@ include './partials/header.php'
     </script>
     <script src="<?= ROOT_URL ?>js/main.js"></script>
     <script src="./js/categories/getCategories.js"></script>
+    <script type="text/javascript">const userId = "<?= $userId ?>";</script>
     <script src="./js/posts/createPost.js"></script>
   </body>
 </html>

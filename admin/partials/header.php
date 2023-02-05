@@ -3,6 +3,8 @@
 include 'config/database.php';
 $db = new Database();
 $db->connect();
+
+session_start();
 ?>
 
 <!DOCTYPE html>
