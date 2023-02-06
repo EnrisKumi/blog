@@ -28,6 +28,8 @@ function getUsers() {
       tr.appendChild(usernameTd);
 
       const tdEdit = document.createElement("td");
+
+      
       const editLink = document.createElement("a");
       editLink.className = "btn sm"
       const edit = document.createTextNode("Edit")
