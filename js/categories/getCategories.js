@@ -1,4 +1,5 @@
-const url = "http://localhost:81/webproject/api/";
+//const url = "http://localhost:81/webproject/api/";
+const url = "http://localhost/blog/api/";
 
 window.onload = function () {
   getCategories();

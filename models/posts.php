@@ -135,6 +135,34 @@ class Posts {
         return ($Execute ? true : false);
     }
 
+    public function getAllPostsById() {    //TODO getAllPostsById
+
+        $query = "SELECT * FROM " . $this->table;
+        $query .= " WHERE userId = ? ";
+
+        $stmt = $this->conn->prepare($query);
+
+        //$idUser = $this->userId = $userIdT; 
+
+        $stmt->bindParam(1, $this->userId);
+
+        $stmt->execute();
+
+        // $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // $this->id = $data["id"];
+        // $this->title = $data["title"];
+        // $this->body = $data["body"];
+        // $this->thumbnail = $data["thumbnail"];
+        // $this->dateTime = $data["dateTime"];
+        // $this->categoryId = $data["categoryId"];
+        // $this->userId = $data["userId"];
+
+        //todo check
+        return $stmt;
+
+    }
+
 }
 
 ?>
