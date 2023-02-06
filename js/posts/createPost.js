@@ -1,4 +1,4 @@
-const url = "http://localhost/blog/index.php";
+const rederectUrl = "http://localhost/blog/index.php";
 //const url = "http://localhost:81/webproject/index.php";
 
 const button = document.querySelector(".form");
@@ -27,5 +27,5 @@ button.addEventListener("submit", function (event) {
     },
   }).then(function (response) {
     return response.json();
-  }).then(window.location.assign(url))
+  }).then(window.location.assign(rederectUrl))
 });

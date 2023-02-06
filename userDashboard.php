@@ -39,29 +39,15 @@ include './partials/header.php';
             Delete
           </th>
         </thead>
-        <tbody>
-          <tr>
-            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-            <td>Art</td>
-            <td><a href="<?= ROOT_URL ?>userEditPost.php" class="btn sm">Edit</a></td>
-            <td>
-              <a href="<?= ROOT_URL ?>admin/delete-posts.php" class="btn sm danger">Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
-            <td>Wild Life</td>
-            <td><a href="<?= ROOT_URL ?>userEditPost.php" class="btn sm">Edit</a></td>
-            <td>
-              <a href="<?= ROOT_URL ?>admin/delete-posts.php" class="btn sm danger">Delete</a>
-            </td>
-          </tr>
+        <tbody id="tableBody">
+          
         </tbody>
       </table>
     </main>
   </div>
 </section>
 <script src="<?= ROOT_URL ?>js/main.js"></script>
+<script src="./js/posts/getPostsUser.js"></script>
 </body>
 
 </html>
