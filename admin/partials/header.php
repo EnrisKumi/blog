@@ -38,15 +38,46 @@ session_start();
           <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
           <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>
           <!-- <li><a href="signin.html">Sign In</a></li> -->
-          <li class="nav_profile">
+          <?php
+        if (isset($_SESSION["id"])) {
+        ?>
+
+          <li><a href="#"><?php echo $_SESSION["username"]; ?></a></li>
+          <?php 
+          if($_SESSION["isAdmin"] === 0){?>
+            <li class="nav_profile">
+            <div class="avatar">
+              <img src="./images/avatar1.jpg" alt="Image not found" />
+            </div>
+            <ul>
+              <li><a href="<?= ROOT_URL ?>userDashboard.php">Dashboard</a></li>
+              <li><a href="../includes/logout.inc.php">Log Out</a></li>
+            </ul>
+          </li>
+          <?php 
+          } else {  ?>
+            <li class="nav_profile">
             <div class="avatar">
               <img src="./images/avatar1.jpg" alt="Image not found" />
             </div>
             <ul>
               <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
-              <li><a href="<?= ROOT_URL ?>">Log Out</a></li>
+              <li><a href="../includes/logout.inc.php">Log Out</a></li>
             </ul>
           </li>
+          <?php 
+          } ?>
+
+          ?>
+          <?php
+        } else {
+          ?>
+
+          <li><a href="signin.php">Sign In</a></li>
+
+          <?php
+        }
+          ?>
         </ul>
 
         <button id="open_nav-btn"><i class="uil uil-bars"></i></button>

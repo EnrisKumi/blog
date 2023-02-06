@@ -66,16 +66,6 @@ session_start();
           } ?>
 
           ?>
-          <!-- <li class="nav_profile">
-            <div class="avatar">
-              <img src="./images/avatar1.jpg" alt="Image not found" />
-            </div>
-            <ul>
-              <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
-              <li><a href="./includes/logout.inc.php">Log Out</a></li>
-            </ul>
-          </li> -->
-
           <?php
         } else {
           ?>
@@ -85,15 +75,6 @@ session_start();
           <?php
         }
           ?>
-          <!-- <li class="nav_profile">
-            <div class="avatar">
-              <img src="./images/avatar1.jpg" alt="Image not found" />
-            </div>
-            <ul>
-              <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
-              <li><a href="./includes/logout.inc.php">Log Out</a></li>
-            </ul>
-          </li> -->
       </ul>
 
       <button id="open_nav-btn"><i class="uil uil-bars"></i></button>
