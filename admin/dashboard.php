@@ -59,18 +59,10 @@ include 'partials/header.php';
             Delete
           </th>
         </thead>
-        <tbody>
+        <tbody id="tableBody" >
           <tr>
             <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
             <td>Art</td>
-            <td><a href="<?= ROOT_URL ?>admin/edit-posts.php" class="btn sm">Edit</a></td>
-            <td>
-              <a href="<?= ROOT_URL ?>admin/delete-posts.php" class="btn sm danger">Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
-            <td>Wild Life</td>
             <td><a href="<?= ROOT_URL ?>admin/edit-posts.php" class="btn sm">Edit</a></td>
             <td>
               <a href="<?= ROOT_URL ?>admin/delete-posts.php" class="btn sm danger">Delete</a>
@@ -82,6 +74,7 @@ include 'partials/header.php';
   </div>
 </section>
 <script src="<?= ROOT_URL ?>js/main.js"></script>
+<script src="../js/posts/getPostsAdmin.js"></script>
 </body>
 
 </html>

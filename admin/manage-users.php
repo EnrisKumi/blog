@@ -66,8 +66,8 @@ include 'partials/header.php'
                 Admin
               </th>
             </thead>
-            <tbody>
-              <!-- <tr>
+            <tbody id="tableBody">
+              <tr>
                 <td>Enris</td>
                 <td>Stimpy</td>
                 <td><a href="<?= ROOT_URL ?>admin/edit-user.php" class="btn sm">Edit</a></td>
@@ -78,22 +78,12 @@ include 'partials/header.php'
                 </td>
                 <td>Yes</td>
               </tr>
-              <tr>
-                <td>Muki</td>
-                <td>Stimpy</td>
-                <td><a href="<?= ROOT_URL ?>admin/edit-user.php" class="btn sm">Edit</a></td>
-                <td>
-                  <a href="<?= ROOT_URL ?>admin/delete-user.php" class="btn sm danger"
-                    >Delete</a
-                  >
-                </td>
-                <td>Yes</td>
-              </tr> -->
             </tbody>
           </table>
         </main>
       </div>
     </section>   
     <script src="<?= ROOT_URL ?>js/main.js"></script>
+    <script src="../js/users/getAllUsers.js"></script>
   </body>
 </html>
