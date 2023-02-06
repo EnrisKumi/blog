@@ -27,7 +27,7 @@ function getCategories() {
         const editLink = document.createElement("a");
         editLink.className = "btn sm"
         const edit = document.createTextNode("Edit")
-        editLink.setAttribute("href", "http://localhost:81/webproject/admin/edit-category.php");
+        editLink.setAttribute("href", `http://localhost:81/webproject/admin/edit-category.php?id=${element.id}`);
         editLink.appendChild(edit)
         tdEdit.appendChild(editLink);
         tr.appendChild(tdEdit)
@@ -37,7 +37,7 @@ function getCategories() {
         const deleteLink = document.createElement("a");
         deleteLink.className = "btn sm danger"
         const deleteName = document.createTextNode("Delete")
-        deleteLink.setAttribute("href", "http://localhost:81/webproject/admin/admin/delete-category.php");
+        deleteLink.setAttribute("href", `http://localhost:81/webproject/admin/admin/delete-category.php?id=${element.id}`);
         deleteLink.appendChild(deleteName)
         tdDelete.appendChild(deleteLink);
         tr.appendChild(tdDelete);
