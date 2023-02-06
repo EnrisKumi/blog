@@ -7,14 +7,15 @@ include 'partials/header.php'
         <div class="alert_message error">
           <p>This is an error message</p>
         </div>
-        <form action="">
-          <input type="text" placeholder="Title" />
-          <textarea rows="4" placeholder="Description"></textarea>
+        <form class="form" action="" enctype="multipart/form-data">
+          <input id="titleArea" type="text" placeholder="Title" />
+          <textarea id="descriptionArea" rows="4" placeholder="Description"></textarea>
           <button class="btn" type="submit">Add Category</button>
         </form>
       </div>
     </section>
 
     <script src="<?= ROOT_URL ?>js/main.js"></script>
+    <script src="../js/categories/createCategory.js"></script>
   </body>
 </html>
