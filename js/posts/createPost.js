@@ -1,3 +1,6 @@
+const url = "http://localhost/blog/index.php";
+//const url = "http://localhost:81/webproject/index.php";
+
 const button = document.querySelector(".form");
 
 button.addEventListener("submit", function (event) {
@@ -24,5 +27,5 @@ button.addEventListener("submit", function (event) {
     },
   }).then(function (response) {
     return response.json();
-  }).then(window.location.assign("http://localhost:81/webproject/index.php"))
+  }).then(window.location.assign(url))
 });

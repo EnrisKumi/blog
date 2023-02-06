@@ -1,5 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-//const url = "http://localhost/blog/api/";
+// const url = "http://localhost:81/webproject/api/";
+//const url2 = "http://localhost:81/webproject/";
+const url = "http://localhost/blog/api/";
+const url2 = "http://localhost/blog/";
 
 window.onload = function () {
   getPosts();
@@ -36,7 +38,7 @@ function getPosts() {
         const editLink = document.createElement("a");
         editLink.className = "btn sm"
         const edit = document.createTextNode("Edit")
-        editLink.setAttribute("href", "http://localhost:81/webproject/admin/edit-posts.php");
+        editLink.setAttribute("href", `${url2}`+"admin/edit-posts.php");
         editLink.appendChild(edit)
         tdEdit.appendChild(editLink);
         tr.appendChild(tdEdit)
@@ -46,7 +48,7 @@ function getPosts() {
         const deleteLink = document.createElement("a");
         deleteLink.className = "btn sm danger"
         const deleteName = document.createTextNode("Delete")
-        deleteLink.setAttribute("href", "http://localhost:81/webproject/admin/admin/delete-posts.php");
+        deleteLink.setAttribute("href", `${url2}`+"admin/admin/delete-posts.php");
         deleteLink.appendChild(deleteName)
         tdDelete.appendChild(deleteLink);
         tr.appendChild(tdDelete);
