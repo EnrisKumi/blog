@@ -1,5 +1,5 @@
-const url = "http://localhost:81/webproject/api/";
-//const url = "http://localhost/blog/api/";
+//const url = "http://localhost:81/webproject/api/";
+const url = "http://localhost/blog/api/";
 
 window.onload = function () {
   getCategories();
@@ -37,7 +37,7 @@ function getCategories() {
         const deleteLink = document.createElement("a");
         deleteLink.className = "btn sm danger"
         const deleteName = document.createTextNode("Delete")
-        deleteLink.setAttribute("href", `http://localhost:81/webproject/admin/admin/delete-category.php?id=${element.id}`);
+        deleteLink.setAttribute("href", `${url}categories/deleteCategories.php?id=${element.id}`);
         deleteLink.appendChild(deleteName)
         tdDelete.appendChild(deleteLink);
         tr.appendChild(tdDelete);

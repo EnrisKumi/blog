@@ -67,7 +67,7 @@ include 'partials/header.php'
               </th>
             </thead>
             <tbody id="tableBody">
-              <tr>
+              <!-- <tr>
                 <td>Enris</td>
                 <td>Stimpy</td>
                 <td><a href="<?= ROOT_URL ?>admin/edit-user.php" class="btn sm">Edit</a></td>
@@ -77,7 +77,7 @@ include 'partials/header.php'
                   >
                 </td>
                 <td>Yes</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </main>

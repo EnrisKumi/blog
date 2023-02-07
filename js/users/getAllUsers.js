@@ -1,6 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const rederectUrl = "http://localhost:81/webproject/";
-//const url = "http://localhost/blog/";
+// url = "http://localhost:81/webproject/api/";
+// const rederectUrl = "http://localhost:81/webproject/";
+const url = "http://localhost/blog/api/";
+const rederectUrl = "http://localhost/blog/";
 
 window.onload = function () {
   getUsers();
@@ -42,7 +43,7 @@ function getUsers() {
       const deleteLink = document.createElement("a");
       deleteLink.className = "btn sm danger"
       const deleteName = document.createTextNode("Delete")
-      deleteLink.setAttribute("href", `${rederectUrl}admin/delete-user.php`);
+      deleteLink.setAttribute("href", `${url}users/deleteUser.php?id=${element.id}`); //TODO change url
       deleteLink.appendChild(deleteName)
       tdDelete.appendChild(deleteLink);
       tr.appendChild(tdDelete);

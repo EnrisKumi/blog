@@ -8,13 +8,10 @@ include 'partials/header.php'
       <div class="container form_section-container-adduser">
         <h2>Sign Up
         </h2>
-        <!-- <div class="alert_message error">
-          <p>This is an error message</p>
-        </div> -->
         <span>
         <?php if (isset($_GET['msg'])) {
           $error = $_GET['msg'];
-          printf('<div class="alert_message error">%s</div><br><br?',$error);     //TODO CHANGE COLOR
+          printf('<div class="alert_message error">%s</div><br><br?',$error);
         }
         ?>
       </span>

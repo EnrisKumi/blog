@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
@@ -10,17 +13,21 @@ $db = $database->connect();
 
 $posts = new Posts($db);
 
-$data = json_decode(file_get_contents("php://input"));
 
-$posts->id = $data->id;
+$posts->id = isset($_GET['id']) ? $_GET['id'] : die();
 
 
-if($posts->deletePost()) {
-    echo json_encode(
-      array('message' => 'Post Deleted')
-    );
+if ($posts->deletePost()) {
+
+  if ($_SESSION["isAdmin"] == 1) {
+    //echo $_SESSION["isAdmin"];
+    header("location: http://localhost/blog/admin/dashboard.php"); //TODO change url
   } else {
-    echo json_encode(
-      array('message' => 'Post Not Deleted')
-    );
+    //echo $_SESSION["isAdmin"];
+    header("location: http://localhost/blog/userDashboard.php"); //TODO change url
   }
+} else {
+  echo json_encode(
+    array('message' => 'Post Not Deleted')
+  );
+}

@@ -1,5 +1,5 @@
-const url = "http://localhost:81/webproject/api/"
-//const url = "http://localhost/blog/api/";
+//const url = "http://localhost:81/webproject/api/"
+const url = "http://localhost/blog/api/";
 
 window.onload = function () {
  getData();
@@ -51,7 +51,7 @@ function getData() {
 
        const titleLink = document.createElement("a");
        const x = document.createTextNode(`${element.title}`)
-       titleLink.setAttribute("href", "http://localhost:81/webproject/post.php")
+       titleLink.setAttribute("href", "http://localhost:81/webproject/post.php")  //TODO change link
        titleLink.appendChild(x);
        postTitle.appendChild(titleLink);
 

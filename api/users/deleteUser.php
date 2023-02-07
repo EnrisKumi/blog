@@ -12,12 +12,10 @@ $user = new Users($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
-$user->id = $data->id;
+$user->id = isset($_GET['id']) ? $_GET['id'] : die();
 
 if($user->deleteUser()) {
-    echo json_encode(
-      array('message' => 'User Deleted')
-    );
+  header("location: http://localhost/blog/admin/manage-users.php");  //TODO change url
   } else {
     echo json_encode(
       array('message' => 'User Not Deleted')

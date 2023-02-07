@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+//$url = "http://localhost/blog/admin/manage-categories.php";
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -11,14 +13,16 @@ $db = $database->connect();
 
 $categories = new Categories($db);
 
-$data = json_decode(file_get_contents("php://input"));
+$categories->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-$categories->id = $data->id;
+
+// $categories->id = $data->id;
 
 if($categories->deleteCategory()) {
-    echo json_encode(
-      array('message' => 'Category Deleted')
-    );
+    // echo json_encode(
+    //   array('message' => 'Category Deleted')
+    // );
+    header("location: http://localhost/blog/admin/manage-categories.php");  //TODO change url
   } else {
     echo json_encode(
       array('message' => 'Category Not Deleted')

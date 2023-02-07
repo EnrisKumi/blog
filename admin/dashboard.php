@@ -60,14 +60,14 @@ include 'partials/header.php';
           </th>
         </thead>
         <tbody id="tableBody" >
-          <tr>
+          <!-- <tr>
             <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
             <td>Art</td>
             <td><a href="<?= ROOT_URL ?>admin/edit-posts.php" class="btn sm">Edit</a></td>
             <td>
               <a href="<?= ROOT_URL ?>admin/delete-posts.php" class="btn sm danger">Delete</a>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </main>
