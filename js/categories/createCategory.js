@@ -1,5 +1,6 @@
-//const url = "http://localhost:81/webproject/";
-const url = "http://localhost/blog/"
+const url = "http://localhost:81/webproject/api/";
+const rederectUrl = "http://localhost:81/webproject/"
+//const url = "http://localhost/blog/"
 
 const button = document.querySelector(".form")
 
@@ -23,6 +24,6 @@ button.addEventListener('submit', function(event){
         },
       }).then(function (response) {
         return response.json();
-      }).then(window.location.assign(`${url}admin/manage-categories.php`))
+      }).then(window.location.assign(`${rederectUrl}admin/manage-categories.php`))
 
 })

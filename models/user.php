@@ -97,31 +97,32 @@ class Users
             $query = "UPDATE " . $this->table . ' SET 
             firstname = :fn,
             lastname = :ln,
-            username = :un,
-            email= :em,
-            password = :pass,
-            avatar = :ava,
             isAdmin = :isadm
             WHERE 
             id = :i';
+
+            // username = :un,
+            // email= :em,
+            // password = :pass,
+            // avatar = :ava,
 
             $stmt = $this->conn->prepare($query);
 
             $this->firstname = htmlspecialchars(strip_tags($this->firstname));
             $this->lastname = htmlspecialchars(strip_tags($this->lastname));
-            $this->username = htmlspecialchars(strip_tags($this->username));
-            $this->email = htmlspecialchars(strip_tags($this->email));
-            $this->password = htmlspecialchars(strip_tags($this->password));
-            $this->avatar = htmlspecialchars(strip_tags($this->avatar));
+            // $this->username = htmlspecialchars(strip_tags($this->username));
+            // $this->email = htmlspecialchars(strip_tags($this->email));
+            // $this->password = htmlspecialchars(strip_tags($this->password));
+            // $this->avatar = htmlspecialchars(strip_tags($this->avatar));
             $this->isAdmin = htmlspecialchars(strip_tags($this->isAdmin));
             $this->id = htmlspecialchars(strip_tags($this->id));
 
             $stmt->bindParam(':fn', $this->firstname);
             $stmt->bindParam(':ln', $this->lastname);
-            $stmt->bindParam(':un', $this->username);
-            $stmt->bindParam(':em', $this->email);
-            $stmt->bindParam(':pass', $this->password);
-            $stmt->bindParam(':ava', $this->avatar);
+            // $stmt->bindParam(':un', $this->username);
+            // $stmt->bindParam(':em', $this->email);
+            // $stmt->bindParam(':pass', $this->password);
+            // $stmt->bindParam(':ava', $this->avatar);
             $stmt->bindParam(':isadm', $this->isAdmin);
             $stmt->bindParam(':i', $this->id);
 

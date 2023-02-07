@@ -16,10 +16,10 @@ $user->id = $data->id;
 
 $user->firstname = $data->firstname;
 $user->lastname = $data->lastname;
-$user->username = $data->username;
-$user->email = $data->email;
-$user->password = $data->password;
-$user->avatar = $data->avatar;
+// $user->username = $data->username;
+// $user->email = $data->email;
+// $user->password = $data->password;
+// $user->avatar = $data->avatar;
 $user->isAdmin = $data->isAdmin;
 
 if($user->updateUser()) {

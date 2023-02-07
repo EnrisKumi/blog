@@ -43,7 +43,7 @@ include 'partials/header.php';
       </ul>
     </aside>
     <main>
-      <h2>Manage Users</h2>
+      <h2>Dashboard</h2>
       <table>
         <thead>
           <th>
