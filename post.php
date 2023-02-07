@@ -5,12 +5,10 @@ include 'partials/header.php';
 
 <!--Single Post-->
 <section class="singlepost">
-  <div class="container singlepost_container">
-    <h2>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates,
-      nisi!
+  <div id="post_container" class="container singlepost_container">
+    <h2 id="title" >
     </h2>
-    <div class="post_author">
+    <!-- <div class="post_author">
       <div class="post_author-avatar">
         <img src="./images/avatar2.jpg" alt="Image not found" />
       </div>
@@ -42,11 +40,12 @@ include 'partials/header.php';
       nihil illo incidunt. Voluptas consequuntur excepturi, molestiae
       blanditiis aut illum pariatur, impedit eos, libero commodi ratione
       totam ipsum sunt natus reiciendis quia!
-    </p>
+    </p> -->
   </div>
 </section>
 <!--End Of Single Post-->
 <script src="./js/main.js"></script>
+<script src="./js/posts/showSiglePost.js"></script>
 
 </body>
 
