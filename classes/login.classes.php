@@ -60,5 +60,27 @@ class Login extends Database
 
         
     }
+
+    protected function checkUsers($username) {
+
+        $stmt = $this->connect()->prepare('SELECT username FROM users WHERE username = ?;');
+
+        if(!$stmt->execute(array($username))){
+
+            $stmt = null;
+            header("location: ../index.php?error=stmtfailed");
+            exit();
+        }
+
+        $result = false;
+        if($stmt->rowCount() > 0){
+            $result = false;
+        }else {
+            $result = true;
+        }
+
+        return $result;
+
+    }
 }
 

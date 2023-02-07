@@ -14,7 +14,7 @@ include 'partials/header.php'
         <span>
         <?php if (isset($_GET['msg'])) {
           $error = $_GET['msg'];
-          printf('<div class="errort">%s</div><br><br?',$error);     //TODO CHANGE COLOR
+          printf('<div class="alert_message error">%s</div><br><br?',$error);     //TODO CHANGE COLOR
         }
         ?>
       </span>

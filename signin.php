@@ -20,16 +20,10 @@
   <section class="form_section">
     <div class="container form_section-container">
       <h2>Sign In</h2>
-
-      <!-- <div class="alert_message success">
-          <p>This is an success message</p>
-        </div> -->
-
-
       <span>
         <?php if (isset($_GET['msg'])) {
           $error = $_GET['msg'];
-          printf('<div class="errort">%s</div><br><br?',$error);     //TODO CHANGE COLOR
+          printf('<div class="alert_message error">%s</div><br><br?',$error); 
         }
         ?>
       </span>

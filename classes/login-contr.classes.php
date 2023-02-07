@@ -21,6 +21,13 @@ class LoginContr extends Login{
             exit();
         }
 
+        if($this->usernameDosentExist() == true){
+            $msg = "This username does not exist";
+            header("location: ../signin.php?msg=$msg");
+            //header("location: ../index.php?error=passwordmatch");
+            exit();
+        }
+
         $this->getUser($this->username, $this->password);
     }
 
@@ -34,6 +41,22 @@ class LoginContr extends Login{
 
         }else {
             $result = true;
+        }
+
+        return $result;
+    }
+
+    private function usernameDosentExist() {
+        $result = false;
+
+        if(!$this->checkUsers($this->username)){
+
+            $result = false;
+
+        }else {
+
+            $result = true;
+
         }
 
         return $result;
