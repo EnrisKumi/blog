@@ -27,12 +27,6 @@ include 'partials/header.php';
     <!--Category-->
     <section class="category_buttons">
       <div class="container category_buttons-container">
-        <a href="" class="category_button">Wild</a>
-        <a href="" class="category_button">Wild Life</a>
-        <a href="" class="category_button">Life</a>
-        <a href="" class="category_button">Art</a>
-        <a href="" class="category_button">Food</a>
-        <a href="" class="category_button">Music</a>
       </div>
     </section>
     <!--End Of Category-->
