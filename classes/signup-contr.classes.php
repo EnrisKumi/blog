@@ -37,7 +37,7 @@ class SignupContr extends Signup{   //TODO add avatar
             exit();
         }
         if($this->invalidEmail() == false){
-            $msg = "Incalid Email";
+            $msg = "Invalid Email";
 
             header("location: ../signup.php?msg=$msg");
             //header("location: ../index.php?error=email");

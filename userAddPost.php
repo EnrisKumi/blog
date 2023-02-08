@@ -11,12 +11,12 @@ $userId = $_SESSION["id"];
     <section class="form_section">
       <div class="container form_section-container">
         <h2>Add Post</h2>
-        <div class="alert_message error">
+        <!-- <div class="alert_message error">
           <p>This is an error message</p>
         </div>
-        <form class="formUser" action="" enctype="multipart/form-data">
-          <input type="text" id="titleUser" placeholder="Title" />
-          <select id="selectCategoriesUser" >
+        <form class="form" action="" enctype="multipart/form-data">
+          <input type="text" id="title" placeholder="Title" />
+          <select id="selectCategories" >
           </select>
           <textarea rows="10" id="summernoteUser" placeholder="body"></textarea>
           <div class="form_control">
