@@ -85,7 +85,6 @@ function getData(fetchUrl) {
         postInfo.appendChild(postTitle);
 
         const body = document.createElement("p");
-        body.innerHTML = element.body;
         body.className = "post_body";
 
         postInfo.appendChild(body);
