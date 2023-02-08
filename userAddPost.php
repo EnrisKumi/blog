@@ -20,8 +20,8 @@ $userId = $_SESSION["id"];
           </select>
           <textarea rows="10" id="summernote" placeholder="body"></textarea>
           <div class="form_control">
-            <label for="thumbnail">Add Photo</label>
-            <input type="file" id="thumbnail" />
+            <label id="imageLabel" for="thumbnail">Add Photo</label>
+            <input accept=".jpg,.png,.jpeg" type="file" id="imageSelect" />
           </div>
           <button class="btn" id="submitButton" type="submit">Add Post</button>
         </form>
@@ -43,8 +43,8 @@ $userId = $_SESSION["id"];
 
     </script>
     <script src="<?= ROOT_URL ?>js/main.js"></script>
-    <script src="./js/categories/getCategories.js"></script>
+    <script src="../js/categories/getCategories.js"></script>
     <script type="text/javascript">const userId = "<?= $userId ?>";</script>
-    <script src="./js/posts/createPost.js"></script>
+    <script src="../js/posts/createPost.js"></script>
   </body>
 </html>

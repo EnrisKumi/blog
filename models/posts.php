@@ -163,6 +163,18 @@ class Posts {
 
     }
 
+    public function getPostsBySearch($Search){
+        $query = "SELECT * FROM posts WHERE
+        title LIKE :search";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(':search', '%' . $Search . '%');
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 }
 
 ?>

@@ -67,7 +67,7 @@ function getPost() {
       const singlePostThumbnail = document.createElement("div");
       singlePostThumbnail.className = 'singlepost_thumbnail';
       const photo = document.createElement("img");
-      photo.src = "./images/blog6.jpg";
+      photo.src = `images/${data.thumbnail}`;
       photo.alt = "Image not found";
 
       singlePostThumbnail.appendChild(photo)

@@ -10,7 +10,15 @@ $db = $database->connect();
 
 $posts = new Posts($db);
 
-$result = $posts->getPosts();
+if(isset($_GET["Search"])){
+    if(empty($_GET["Search"])){
+        $result = $posts->getPosts();
+    } else {
+        $result = $posts->getPostsBySearch($_GET["Search"]);
+    }
+} else {
+    $result = $posts->getPosts();
+}
 
 $rows = $result->rowCount();
 

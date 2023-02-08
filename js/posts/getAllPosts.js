@@ -1,105 +1,131 @@
-//const url = "http://localhost:81/webproject/api/"
-const url = "http://localhost/blog/api/";
+const url = "http://localhost:81/webproject/api/";
+//const url = "http://localhost/blog/api/";
 
 window.onload = function () {
- getData();
+  getData();
 };
 
-function getData() {
-  fetch(`${url}posts/getPosts.php`, {
-   method: "GET",
-   headers: {
-     "Content-Type": "application/json",
-   },
- })
-   .then((response) => response.json())
-   .then((data) => {
-     console.log(data);
-     const postsContainer = document.querySelector("#posts_container");
-     data.forEach((element) => {
-       const article = document.createElement("article");
-       article.className = "post";
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
 
-       const postThumbnail = document.createElement("div");
-       postThumbnail.className = "post_thumbnail";
+let value = params.id;
+console.log(value);
 
-       const imagePost = document.createElement("img");
-       imagePost.src = "./images/blog2.jpg"
-       imagePost.alt = "Image not found"
+document
+  .querySelector("#searchButton")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    document.querySelector("#deni").remove();
 
-       postThumbnail.appendChild(imagePost);
+    fetchUrl = `?Search=${document.querySelector("#searchBar").value}`;
 
-       article.appendChild(postThumbnail);
+    getData(fetchUrl);
+  });
 
-       const postInfo = document.createElement("div");
-       postInfo.className = "post_info";
+function getData(fetchUrl) {
+  fetch(`${url}posts/getPosts.php/${fetchUrl}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // const postsContainer = document.querySelector("#posts_container");
+      const postContainerDiv = document.createElement("div");
+      postContainerDiv.id = 'deni'
+      postContainerDiv.className = "container posts_container";
+      document.querySelector(".posts").append(postContainerDiv)
+      data.forEach((element) => {
+        const article = document.createElement("article");
+        article.className = "post";
 
-       const categoryLink = document.createElement("a");
-       const category = fetch(`${url}categories/getCategoriesById.php?id=${element.categoryId}`)
-       .then((response) => response.json())
-       .then((data)=>{
-         console.log(data)
-         const y = document.createTextNode(`${data.title}`)
-         categoryLink.appendChild(y);
-         categoryLink.className = "category_button";
-       })
+        const postThumbnail = document.createElement("div");
+        postThumbnail.className = "post_thumbnail";
 
-       postInfo.appendChild(categoryLink);
+        const imagePost = document.createElement("img");
+        imagePost.src = `images/${element.thumbnail}`
+        imagePost.alt = "Image not found";
 
-       const postTitle = document.createElement("h3");
-       postTitle.className = "post_title";
+        postThumbnail.appendChild(imagePost);
 
-       const titleLink = document.createElement("a");
-       const x = document.createTextNode(`${element.title}`)
-       titleLink.setAttribute("href", "http://localhost:81/webproject/post.php")  //TODO change link
-       titleLink.appendChild(x);
-       postTitle.appendChild(titleLink);
+        article.appendChild(postThumbnail);
 
-       postInfo.appendChild(postTitle);
+        const postInfo = document.createElement("div");
+        postInfo.className = "post_info";
 
-       const body = document.createElement("p");
-       body.innerHTML = element.body
-       body.className = "post_body";
+        const categoryLink = document.createElement("a");
+        const category = fetch(
+          `${url}categories/getCategoriesById.php?id=${element.categoryId}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            const y = document.createTextNode(`${data.title}`);
+            categoryLink.appendChild(y);
+            categoryLink.className = "category_button";
+          });
 
-       postInfo.appendChild(body);
+        postInfo.appendChild(categoryLink);
 
-       const authorDiv = document.createElement("div");
-       authorDiv.className = "post_author";
+        const postTitle = document.createElement("h3");
+        postTitle.className = "post_title";
 
-       const authorAvatar = document.createElement("div");
-       authorAvatar.className = "post_author-avatar";
+        const titleLink = document.createElement("a");
+        const x = document.createTextNode(`${element.title}`);
+        titleLink.setAttribute(
+          "href",
+          `http://localhost:81/webproject/post.php?id=${element.id}`
+        ); //TODO change link
+        titleLink.appendChild(x);
+        postTitle.appendChild(titleLink);
 
-       const authorAvatarImage = document.createElement("img");
-       authorAvatarImage.src = "./images/blog2.jpg"
-       authorAvatarImage.alt = "Image not found"
-       authorAvatar.appendChild(authorAvatarImage);
+        postInfo.appendChild(postTitle);
 
-       authorDiv.appendChild(authorAvatar);
+        const body = document.createElement("p");
+        body.innerHTML = element.body;
+        body.className = "post_body";
 
-       const authorInfo = document.createElement("div");
-       authorInfo.className = "post_author-info";
+        postInfo.appendChild(body);
 
-       const authorName = document.createElement("h5");
-       const user = fetch(`${url}users/getUserById.php?id=${element.userId}`)
-       .then((response) => response.json())
-       .then((data)=>{
-         authorName.innerHTML = `By: ${data.username}`;
-       })
+        const authorDiv = document.createElement("div");
+        authorDiv.className = "post_author";
 
-       authorInfo.appendChild(authorName);
+        const authorAvatar = document.createElement("div");
+        authorAvatar.className = "post_author-avatar";
 
-       const datePost = document.createElement("small");
-       datePost.innerHTML = element.dateTime
-       authorInfo.appendChild(datePost);
+        const authorAvatarImage = document.createElement("img");
+        authorAvatarImage.src = "./images/blog2.jpg";
+        authorAvatarImage.alt = "Image not found";
+        authorAvatar.appendChild(authorAvatarImage);
 
-       authorDiv.appendChild(authorInfo);
+        authorDiv.appendChild(authorAvatar);
 
-       postInfo.appendChild(authorDiv);
+        const authorInfo = document.createElement("div");
+        authorInfo.className = "post_author-info";
 
-       article.appendChild(postInfo);
+        const authorName = document.createElement("h5");
+        const user = fetch(`${url}users/getUserById.php?id=${element.userId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            authorName.innerHTML = `By: ${data.username}`;
+          });
 
-       postsContainer.appendChild(article)
+        authorInfo.appendChild(authorName);
 
-     });
-   });
+        const datePost = document.createElement("small");
+        datePost.innerHTML = element.dateTime;
+        authorInfo.appendChild(datePost);
+
+        authorDiv.appendChild(authorInfo);
+
+        postInfo.appendChild(authorDiv);
+
+        article.appendChild(postInfo);
+
+        postContainerDiv.appendChild(article);
+      });
+    });
 }

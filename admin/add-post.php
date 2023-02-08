@@ -20,8 +20,8 @@ $userId = $_SESSION["id"];
           </select>
           <textarea rows="10" id="summernote" placeholder="body"></textarea>
           <div class="form_control">
-            <label for="thumbnail">Add Photo</label>
-            <input type="file" id="thumbnail" />
+            <label id="imageLabel" for="thumbnail">Add Photo</label>
+            <input accept=".jpg,.png,.jpeg" type="file" id="imageSelect" />
           </div>
           <button class="btn" id="submitButton" type="submit">Add Post</button>
         </form>

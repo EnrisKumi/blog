@@ -1,7 +1,7 @@
-// url = "http://localhost:81/webproject/api/";
-// const rederectUrl = "http://localhost:81/webproject/";
-const url = "http://localhost/blog/api/";
-const rederectUrl = "http://localhost/blog/";
+url = "http://localhost:81/webproject/api/";
+const rederectUrl = "http://localhost:81/webproject/";
+//const url = "http://localhost/blog/api/";
+//const rederectUrl = "http://localhost/blog/";
 
 window.onload = function () {
   getUsers();

@@ -8,9 +8,9 @@ include 'partials/header.php';
         <form action="" class="container search_bar-container">
             <div>
                 <i class="uil uil-search"></i>
-                <input type="search" name="" placeholder="Search">
+                <input id="searchBar" type="search" name="" placeholder="Search">
             </div>
-            <button type="submit" class="btn">Search</button>
+            <button id="searchButton" type="submit" class="btn">Search</button>
         </form>
     </section>
     <!-- End Of Search -->
@@ -18,9 +18,9 @@ include 'partials/header.php';
 
     <!--Posts-->
     <section class="posts">
-      <div id="posts_container" class="container posts_container">
+      <!-- <div id="posts_container" class="container posts_container">
 
-      </div>
+      </div> -->
     </section>
     <!--End Of Posts-->
 
