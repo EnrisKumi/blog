@@ -14,11 +14,11 @@ $userId = $_SESSION["id"];
         <div class="alert_message error">
           <p>This is an error message</p>
         </div>
-        <form class="form" action="" enctype="multipart/form-data">
-          <input type="text" id="title" placeholder="Title" />
-          <select id="selectCategories" >
+        <form class="formUser" action="" enctype="multipart/form-data">
+          <input type="text" id="titleUser" placeholder="Title" />
+          <select id="selectCategoriesUser" >
           </select>
-          <textarea rows="10" id="summernote" placeholder="body"></textarea>
+          <textarea rows="10" id="summernoteUser" placeholder="body"></textarea>
           <div class="form_control">
             <label id="imageLabel" for="thumbnail">Add Photo</label>
             <input accept=".jpg,.png,.jpeg" type="file" id="imageSelect" />
@@ -43,8 +43,8 @@ $userId = $_SESSION["id"];
 
     </script>
     <script src="<?= ROOT_URL ?>js/main.js"></script>
-    <script src="../js/categories/getCategories.js"></script>
+    <script src="./js/categories/getCategoriesUser.js"></script>
     <script type="text/javascript">const userId = "<?= $userId ?>";</script>
-    <script src="../js/posts/createPost.js"></script>
+    <script src="./js/posts/createPostUser.js"></script>
   </body>
 </html>
