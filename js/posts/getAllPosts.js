@@ -97,7 +97,7 @@ function getData(fetchUrl) {
         authorAvatar.className = "post_author-avatar";
 
         const authorAvatarImage = document.createElement("img");
-        authorAvatarImage.src = "./images/blog2.jpg";
+        authorAvatarImage.src = "images/userAvatar.png";
         authorAvatarImage.alt = "Image not found";
         authorAvatar.appendChild(authorAvatarImage);
 

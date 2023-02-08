@@ -48,7 +48,7 @@ if (!isset($_SESSION["id"])){
           if($_SESSION["isAdmin"] === 0){?>
             <li class="nav_profile">
             <div class="avatar">
-              <img src="./images/avatar1.jpg" alt="Image not found" />
+              <img src="images/userAvatar.png" alt="Image not found" />
             </div>
             <ul>
               <li><a href="<?= ROOT_URL ?>userDashboard.php">Dashboard</a></li>
@@ -59,7 +59,7 @@ if (!isset($_SESSION["id"])){
           } else {  ?>
             <li class="nav_profile">
             <div class="avatar">
-              <img src="./images/avatar1.jpg" alt="Image not found" />
+              <img src="images/userAvatar.png" alt="Image not found" />
             </div>
             <ul>
               <li><a href="<?= ROOT_URL ?>admin/dashboard.php">Dashboard</a></li>
@@ -69,7 +69,6 @@ if (!isset($_SESSION["id"])){
           <?php 
           } ?>
 
-          ?>
           <?php
         } else {
           ?>

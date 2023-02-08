@@ -39,7 +39,7 @@ function getPost() {
       authorAvatar.className = "post_author-avatar";
 
       const authorAvatarImage = document.createElement("img");
-      authorAvatarImage.src = "./images/blog2.jpg";
+      authorAvatarImage.src = "images/userAvatar.png";
       authorAvatarImage.alt = "Image not found";
       authorAvatar.appendChild(authorAvatarImage);
 
@@ -57,12 +57,14 @@ function getPost() {
 
       authorInfo.appendChild(authorName);
 
+
       const datePost = document.createElement("small");
       datePost.innerHTML = data.dateTime;
       authorInfo.appendChild(datePost);
 
+      authorDiv.appendChild(authorInfo)
 
-      postContainer.appendChild(authorInfo);
+      postContainer.appendChild(authorDiv);
 
       const singlePostThumbnail = document.createElement("div");
       singlePostThumbnail.className = 'singlepost_thumbnail';
