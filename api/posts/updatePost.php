@@ -18,9 +18,7 @@ $posts->id = $data->id;
 $posts->title = $data->title;
 $posts->body = $data->body;
 $posts->thumbnail = $data->thumbnail;
-// $posts->dateTime = $data->dateTime;
-// $posts->categoryId = $data->categoryId;
-// $posts->userId = $data->userId;
+
 
 if($posts->updatePost()) {
     echo json_encode(

@@ -1,7 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const url2 = "http://localhost:81/webproject/";
-//const url = "http://localhost/blog/api/";
-//const url2 = "http://localhost/blog/";
+//const url = "http://localhost:81/webproject/api/";
+//const url2 = "http://localhost:81/webproject/";
+const url = "http://localhost/blog/api/";
+const url2 = "http://localhost/blog/";
 
 window.onload = function () {
     getPosts();
@@ -38,7 +38,7 @@ function getPosts() {
                 const editLink = document.createElement("a");
                 editLink.className = "btn sm"
                 const edit = document.createTextNode("Edit")
-                editLink.setAttribute("href", `${url2}` + "admin/edit-posts.php");
+                editLink.setAttribute("href", `${url2}userEditPost.php?id=${element.id}`);
                 editLink.appendChild(edit)
                 tdEdit.appendChild(editLink);
                 tr.appendChild(tdEdit)

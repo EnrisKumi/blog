@@ -1,5 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const rederectUrl = "http://localhost:81/webproject/admin/manage-users.php";
+//const url = "http://localhost:81/webproject/api/";
+//const rederectUrl = "http://localhost:81/webproject/admin/manage-users.php";
+const url = "http://localhost/blog/api/";
+const rederectUrl = "http://localhost/blog/admin/manage-users.php";
 
 const button = document.querySelector(".form");
 

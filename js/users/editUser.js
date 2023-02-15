@@ -1,7 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const rederectUrl =
-  "http://localhost:81/webproject/admin/manage-users.php";
-//const url = "http://localhost/blog/"
+//const url = "http://localhost:81/webproject/api/";
+//const rederectUrl ="http://localhost:81/webproject/admin/manage-users.php";
+const url = "http://localhost/blog/";
+const rederectUrl = "http://localhost/blog/admin/manage-users.php";
 
 window.onload = function () {
   getUser();
@@ -34,7 +34,7 @@ button.addEventListener("submit", function (event) {
 
   const parsedUserUpdate = JSON.stringify(updateUser);
 
-  fetch(`${url}users/updateUser.php`, {
+  fetch(`${url}api/users/updateUser.php`, {
     method: "PUT",
     body: parsedUserUpdate,
     headers: {
@@ -44,11 +44,11 @@ button.addEventListener("submit", function (event) {
     .then(function (response) {
       return response.json();
     })
-    // .then(window.location.assign(rederectUrl));
+    .then(window.location.assign(rederectUrl));
 });
 
 function getUser() {
-  fetch(`${url}users/getUserById.php?id=${value}`, {
+  fetch(`${url}api/users/getUserById.php?id=${value}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

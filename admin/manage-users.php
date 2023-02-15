@@ -72,7 +72,7 @@ include 'partials/header.php'
                 <td>Stimpy</td>
                 <td><a href="<?= ROOT_URL ?>admin/edit-user.php" class="btn sm">Edit</a></td>
                 <td>
-                  <a href="<?= ROOT_URL ?>admin/delete-user.php" class="btn sm danger"
+                  <a href="<?= ROOT_URL ?>admin/delete-user.php" class="btn sm dange r"
                     >Delete</a
                   >
                 </td>

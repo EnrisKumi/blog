@@ -25,10 +25,10 @@ include 'partials/header.php';
     <!--End Of Posts-->
 
     <!--Category-->
-    <section class="category_buttons">
+    <!-- <section class="category_buttons">
       <div class="container category_buttons-container">
       </div>
-    </section>
+    </section> -->
     <!--End Of Category-->
 
     <script src="./js/main.js"></script>

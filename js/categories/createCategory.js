@@ -1,6 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const rederectUrl = "http://localhost:81/webproject/"
-//const url = "http://localhost/blog/"
+//const url = "http://localhost:81/webproject/api/";
+//const rederectUrl = "http://localhost:81/webproject/"
+const rederectUrl = "http://localhost/blog/";
+const url = "http://localhost/blog/api/";
 
 const button = document.querySelector(".form")
 

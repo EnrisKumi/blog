@@ -1,5 +1,5 @@
-const url = "http://localhost:81/webproject/api/";
-//const url = "http://localhost/blog/api/";
+//const url = "http://localhost:81/webproject/api/";
+const url = "http://localhost/blog/api/";
 
 window.onload = function () {
   getCategories();
@@ -27,7 +27,7 @@ function getCategories() {
         const editLink = document.createElement("a");
         editLink.className = "btn sm"
         const edit = document.createTextNode("Edit")
-        editLink.setAttribute("href", `http://localhost:81/webproject/admin/edit-category.php?id=${element.id}`);
+        editLink.setAttribute("href", `http://localhost/blog/admin/edit-category.php?id=${element.id}`);
         editLink.appendChild(edit)
         tdEdit.appendChild(editLink);
         tr.appendChild(tdEdit)

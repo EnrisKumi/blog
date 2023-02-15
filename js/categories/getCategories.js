@@ -1,12 +1,12 @@
-const url = "http://localhost:81/webproject/api/";
-//const url = "http://localhost/blog/api/";
+//const url = "http://localhost:81/webproject/api/";
+const url = "http://localhost/blog/api/";
 
 window.onload = function () {
   getCategories();
 };
 
 function getCategories() {
-  fetch(`${url}categories/getCategories.php`, {
+  fetch(`${url}categories/getCategories.php`, {   //TODO CHECK 
     method: "GET",
     headers: {
       "Content-Type": "application/json",

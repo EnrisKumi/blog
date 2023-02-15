@@ -30,7 +30,9 @@ class Login extends Database
         if ($checkPass == false) {
 
             $stmt = null;
-            header("location: ../signin.php?error=wrongPassword");
+            $msg = "Wrong Password";
+            header("location: ../signin.php?msg=$msg");
+            //header("location: ../signin.php?error=wrongPassword");
             exit();
         }elseif ($checkPass == true){
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = ? OR email = ? AND password = ?;');

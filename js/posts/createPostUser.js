@@ -1,5 +1,5 @@
-//const rederectUrl = "http://localhost/blog/index.php";
-const rederectUrl = "http://localhost:81/webproject/index.php";
+const rederectUrl = "http://localhost/blog/index.php";
+//const rederectUrl = "http://localhost:81/webproject/index.php";
 //const url = "http://localhost:81/webproject/index.php";
 const button = document.querySelector(".formUser");
 

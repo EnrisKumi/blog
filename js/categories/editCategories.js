@@ -1,6 +1,7 @@
-const url = "http://localhost:81/webproject/api/";
-const rederectUrl = "http://localhost:81/webproject/admin/manage-categories.php";
-//const url = "http://localhost/blog/"
+//const url = "http://localhost:81/webproject/api/";
+//const rederectUrl = "http://localhost:81/webproject/admin/manage-categories.php";
+const url = "http://localhost/blog/api/"
+const rederectUrl = "http://localhost/blog/admin/manage-categories.php";
 
 window.onload = function () {
   getCategories();

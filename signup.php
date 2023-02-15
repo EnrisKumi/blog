@@ -22,10 +22,10 @@ include 'partials/header.php'
             <input type="email" name="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Create Password" />
             <input type="password" name="confirmPassword" placeholder="Confirm Password" />
-            <div class="form_control">
+            <!-- <div class="form_control">
               <label for="avatar">Profile Photo</label>
               <input type="file" id="avatar" />
-            </div>
+            </div> -->
             <button class="btn" type="submit" name="submit">Sign Up</button>
           </form>
       </div>
