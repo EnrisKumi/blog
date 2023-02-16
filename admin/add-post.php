@@ -9,11 +9,11 @@ $userId = $_SESSION["id"];
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <section class="form_section">
-      <div class="container form_section-container">
+      <div id="mainDiv" class="container form_section-container">
         <h2>Add Post</h2>
-        <!-- <div class="alert_message error">
-          <p>This is an error message</p>
-        </div> -->
+        <div id="a" class="">
+          <p id="errorDiv" ></p>
+        </div>
         <form class="form" action="" enctype="multipart/form-data">
           <input type="text" id="title" placeholder="Title" />
           <select id="selectCategories" >

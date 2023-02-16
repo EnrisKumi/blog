@@ -40,12 +40,14 @@ class Users
             $this->avatar = htmlspecialchars($this->avatar);
             $this->isAdmin = htmlspecialchars($this->isAdmin);
 
+            $hashedPass = password_hash($this->password, PASSWORD_DEFAULT);
+
             //bind data
             $stmt->bindParam(':fn', $this->firstname);
             $stmt->bindParam(':ln', $this->lastname);
             $stmt->bindParam(':un', $this->username);
             $stmt->bindParam(':em', $this->email);
-            $stmt->bindParam(':pass', $this->password);
+            $stmt->bindParam(':pass', $hashedPass);  //$this->password
             $stmt->bindParam(':ava', $this->avatar);
             $stmt->bindParam(':isadmn', $this->isAdmin);
 

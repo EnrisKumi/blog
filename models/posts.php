@@ -19,6 +19,7 @@ class Posts {
 
     public function createPost(){
 
+
         try{
 
             $query = "INSERT INTO " . $this->table . '(title, body, thumbnail, categoryId, userId)';
@@ -83,6 +84,8 @@ class Posts {
     }
 
     public function updatePost(){
+
+
         try {
             $query = "UPDATE " . $this->table . ' SET 
             title = :tt,
@@ -91,27 +94,16 @@ class Posts {
             WHERE 
             id = :i';
 
-            // dateTime= :dt,
-            // categoryId = :cid,
-            // userId = :uid,
-
             $stmt = $this->conn->prepare($query);
 
             $this->title = htmlspecialchars(strip_tags($this->title));
             $this->body = htmlspecialchars(strip_tags($this->body));
             $this->thumbnail = htmlspecialchars(strip_tags($this->thumbnail));
-            // $this->dateTime = htmlspecialchars(strip_tags($this->dateTime));
-            // $this->categoryId = htmlspecialchars(strip_tags($this->categoryId));
-            // $this->userId = htmlspecialchars(strip_tags($this->userId));
-            
             $this->id = htmlspecialchars(strip_tags($this->id));
 
             $stmt->bindParam(':tt', $this->title);
             $stmt->bindParam(':bo', $this->body);
             $stmt->bindParam(':thn', $this->thumbnail);
-            // $stmt->bindParam(':dt', $this->dateTime);
-            // $stmt->bindParam(':cid', $this->categoryId);
-            // $stmt->bindParam(':uid', $this->userId);
             $stmt->bindParam(':i', $this->id);
 
             $Execute = $stmt->execute();
@@ -135,30 +127,16 @@ class Posts {
         return ($Execute ? true : false);
     }
 
-    public function getAllPostsById() {    //TODO getAllPostsById
+    public function getAllPostsById() { 
 
         $query = "SELECT * FROM " . $this->table;
         $query .= " WHERE userId = ? ";
 
-        $stmt = $this->conn->prepare($query);
-
-        //$idUser = $this->userId = $userIdT; 
+        $stmt = $this->conn->prepare($query); 
 
         $stmt->bindParam(1, $this->userId);
 
         $stmt->execute();
-
-        // $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // $this->id = $data["id"];
-        // $this->title = $data["title"];
-        // $this->body = $data["body"];
-        // $this->thumbnail = $data["thumbnail"];
-        // $this->dateTime = $data["dateTime"];
-        // $this->categoryId = $data["categoryId"];
-        // $this->userId = $data["userId"];
-
-        //todo check
         return $stmt;
 
     }
@@ -173,6 +151,23 @@ class Posts {
         $stmt->execute();
 
         return $stmt;
+    }
+
+
+
+    private function emptyInputs(){
+
+        $result = false;
+
+        if(empty($this->title) || empty($this->body))
+        {
+            $result = false;
+
+        }else {
+            $result = true;
+        }
+
+        return $result;
     }
 
 }

@@ -32,7 +32,7 @@ button.addEventListener("submit", function (event) {
       .then(function (text) {
         console.log(text);
       })
-      .then(window.location.assign(rederectUrl))
+      // .then(window.location.assign(rederectUrl))
       .catch(function (error) {
         console.log(error);
       });
@@ -49,15 +49,26 @@ button.addEventListener("submit", function (event) {
 
   const parsedPost = JSON.stringify(post);
 
-  fetch(`${url}posts/createPosts.php`, {
-    method: "POST",
-    body: parsedPost,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then(function (response) {
-      return response.json();
+  const divError = document.querySelector("#a")
+  const errorP = document.querySelector("#errorDiv")
+
+  if (!document.querySelector("#title").value || !document.querySelector("#summernote").value) {
+    divError.className = 'alert_message error'
+    errorP.innerHTML = 'One of the fields is missing!'
+  }
+  else {
+    fetch(`${url}posts/createPosts.php`, {
+      method: "POST",
+      body: parsedPost,
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-    .then(saveImageInUploads());
+      .then(function (response) {
+        return response.json();
+      })
+      .then(saveImageInUploads());
+  }
+
+
 });

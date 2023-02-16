@@ -26,17 +26,28 @@ button.addEventListener("submit", function (event) {
   const pass = document.querySelector("#password").value;
   const confirmPass = document.querySelector("#confirmPassword").value;
   const parsedUser = JSON.stringify(user);
-  if (pass === confirmPass) {
-    fetch(`${url}users/create.php`, {
-      method: "POST",
-      body: parsedUser,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(function (response) {
-        return response.json();
+
+  const divError = document.querySelector("#a")
+  const errorP = document.querySelector("#errorDiv")
+  
+  if (!document.querySelector("#firstname").value || !document.querySelector("#lastname").value || !document.querySelector("#username").value || !document.querySelector("#email").value || !document.querySelector("#password").value) {
+    divError.className = 'alert_message error'
+    errorP.innerHTML = 'One of the fields is missing!'
+  } else {
+    if (pass === confirmPass) {
+      fetch(`${url}users/create.php`, {
+        method: "POST",
+        body: parsedUser,
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .then(window.location.assign(rederectUrl));
+        .then(function (response) {
+          return response.json();
+        })
+        .then(window.location.assign(rederectUrl));
+    }
   }
+
+
 });

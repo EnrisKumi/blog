@@ -5,6 +5,13 @@ include 'partials/header.php';
     <section class="form_section">
       <div class="container form_section-container">
         <h2>Edit Post</h2>
+        <span>
+        <?php if (isset($_GET['msg'])) {
+          $error = $_GET['msg'];
+          printf('<div class="alert_message error">%s</div><br><br?',$error); 
+        }
+        ?>
+      </span>
         <form id="form" action="" enctype="multipart/form-data">
           <input type="text" id="titleEditPost" placeholder="Title" />
           <textarea rows="10" id="descriptionEditPost" placeholder="body"></textarea>
@@ -21,3 +28,4 @@ include 'partials/header.php';
     <script src="../js/posts/editPost.js"></script>
   </body>
 </html>
+
