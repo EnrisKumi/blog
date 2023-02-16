@@ -7,7 +7,7 @@ Our blog is fully responsive for desktop, tablets and mobile phones.
 ![b](https://user-images.githubusercontent.com/88925964/219240962-7ecf4786-47c9-4f2a-af22-37057d9ad58e.PNG)
 
 For the frontend we have used html, css and javascript. For the backend part we havre created a rest api which we communicate with the endpoints 
-using fetch. For the database we have used MySql. Also with the rest api we have used object oriented php to construct different classes that we use later on.
+using fetch. For the database we have used MySql. Also with the rest api we have used object oriented php to construct different classes that we use later on. (If you want to see only the frontend part you can check https://github.com/EnrisKumi/Blog_Frontend)
 
 Our blog has a fully functioning and secure signup and login where the passwords inour database are saved as hashed passwords. 
 
