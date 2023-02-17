@@ -32,7 +32,7 @@ button.addEventListener("submit", function (event) {
       .then(function (text) {
         console.log(text);
       })
-      // .then(window.location.assign(rederectUrl))
+      .then(window.location.assign(rederectUrl))
       .catch(function (error) {
         console.log(error);
       });

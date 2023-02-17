@@ -32,7 +32,7 @@ button.addEventListener("submit", function (event) {
       .then(function (text) {
         console.log(text);
       })
-      //.then(window.location.assign(rederectUrl))
+      .then(window.location.assign(rederectUrl))
       .catch(function (error) {
         console.log(error);
       });
@@ -53,7 +53,7 @@ button.addEventListener("submit", function (event) {
   const divError = document.querySelector("#a")
   const errorP = document.querySelector("#errorDiv")
 
-  if (!document.querySelector("#titleUser").va || document.querySelector("#summernoteUser").value) {
+  if (!document.querySelector("#titleUser").value || !document.querySelector("#summernoteUser").value) {
     divError.className = 'alert_message error'
     errorP.innerHTML = 'One of the fields is missing!'
   } else {

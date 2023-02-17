@@ -28,7 +28,7 @@ $userId = $_SESSION["id"];
       </div>
     </section>
     <script>
-      $('#summernote').summernote({
+      $('#summernoteUser').summernote({
         tabsize: 2,
         height: 120,
         toolbar: [
@@ -38,7 +38,7 @@ $userId = $_SESSION["id"];
         ],
         
       });
-      $('#summernote').summernote('foreColor', 'white');
+      $('#summernoteUser').summernote('foreColor', 'white');
 
 
     </script>

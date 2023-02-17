@@ -34,7 +34,7 @@ session_start();
   <!--Navbar-->
   <nav>
     <div class="container nav_container">
-      <a href="<?= ROOT_URL ?>" class="nav_logo">Web</a>
+      <a href="<?= ROOT_URL ?>" class="nav_logo">BlogFE</a>
       <ul class="nav_items">
         <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
         <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>

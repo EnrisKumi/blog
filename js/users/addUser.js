@@ -45,7 +45,8 @@ button.addEventListener("submit", function (event) {
         .then(function (response) {
           return response.json();
         })
-        .then(window.location.assign(rederectUrl));
+        .then(window.location.assign(rederectUrl))
+        .then(window.location.reload());
     }
   }
 
