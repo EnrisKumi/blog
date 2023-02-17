@@ -22,6 +22,11 @@ The normal user view:
 The admin has the premission to perform all the crud operations for creating users, categories or posts.
 Also only the admin can create a new admin for the blog.
 
+The erd diagram for our database:
+![y](https://user-images.githubusercontent.com/88925964/219618823-86f69794-8e24-4265-9854-b730065d1956.PNG)
+
+The relation schema for our database:
+![t](https://user-images.githubusercontent.com/88925964/219618891-06ce02f3-0e20-402f-b325-aa111a2a55e7.PNG)
 
 How to run:
 1. Install XAMPP (or any other similar server package) on your machine.
